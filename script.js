@@ -14,12 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        
-        // Add a subtle animation
-        themeToggle.style.transform = 'rotate(180deg)';
-        setTimeout(() => {
-            themeToggle.style.transform = 'rotate(0deg)';
-        }, 300);
     });
     
     // Smooth scroll for anchor links
