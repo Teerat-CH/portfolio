@@ -521,6 +521,67 @@ body {
     border-color: var(--accent);
 }
 
+/* GitHub Activity Section */
+.github-section {
+    margin-bottom: 2rem;
+}
+
+.github-graph-container {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow var(--transition), background-color var(--transition);
+}
+
+[data-theme="dark"] .github-graph-container {
+    background-color: #2a2520;
+}
+
+.github-graph-container:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+.github-graph {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Show/hide graphs based on theme */
+.github-graph-light {
+    display: block;
+}
+
+.github-graph-dark {
+    display: none;
+    /* Invert colors so empty squares become dark like GitHub's dark mode */
+    filter: invert(1) hue-rotate(180deg) saturate(1.2) brightness(1.1) contrast(0.9);
+}
+
+[data-theme="dark"] .github-graph-light {
+    display: none;
+}
+
+[data-theme="dark"] .github-graph-dark {
+    display: block;
+}
+
+/* For smaller screens, allow horizontal scrolling */
+@media (max-width: 768px) {
+    .github-graph-container {
+        padding: 1rem;
+    }
+    
+    .github-graph {
+        min-width: 700px;
+    }
+}
+
 /* Timeline */
 .timeline {
     position: relative;
